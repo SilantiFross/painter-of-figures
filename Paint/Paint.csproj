@@ -55,6 +55,7 @@
     <Compile Include="Classes\Figures\Polyline.cs" />
     <Compile Include="Classes\Figures\Rectangle.cs" />
     <Compile Include="Classes\Figures\Shape.cs" />
+    <Compile Include="Classes\Main.cs" />
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>

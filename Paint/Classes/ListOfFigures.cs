@@ -5,16 +5,16 @@ namespace Paint.Classes
 {
     internal class ListOfFigures
     {
-        private List<Shape> listOfFigure;
+        private List<Shape> listOfShapes;
 
         public ListOfFigures(List<Shape> listOfShapes)
         {
-            this.listOfFigure = listOfShapes;
+            this.listOfShapes = listOfShapes;
         }
 
         public void DrawingListOfFigures()
         { 
-            foreach (var shape in listOfFigure)
+            foreach (var shape in listOfShapes)
             {
                 dynamic inheritorShape = shape;
                 DrawingShapes.Draw(inheritorShape);
@@ -23,12 +23,12 @@ namespace Paint.Classes
 
         public void Add(Shape figureToAdding)
         {
-            listOfFigure.Add(figureToAdding);
+            listOfShapes.Add(figureToAdding);
         }
 
         public void Delete(Shape figureToRemove)
         {
-            listOfFigure.Remove(figureToRemove);
+            listOfShapes.Remove(figureToRemove);
         }
     }
 }
