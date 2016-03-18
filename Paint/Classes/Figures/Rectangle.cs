@@ -8,6 +8,16 @@ namespace Paint.Classes.Figures
         private readonly float _height;
         private readonly float _width;
 
+        public Rectangle()
+        {
+            //
+        }
+
+        public Rectangle(Color color)
+        {
+            this.Color = color;
+        }
+
         public Rectangle(Point topLeft, float height, float width, Color color)
         {
             this._topLeft = topLeft;

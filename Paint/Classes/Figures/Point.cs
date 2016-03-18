@@ -7,6 +7,16 @@ namespace Paint.Classes.Figures
         public float x;
         public float y;
 
+        public Point()
+        {
+            //
+        }
+
+        public Point(Color color)
+        {
+            this.Color = color;
+        }
+
         public Point(float x, float y)
         {
             this.x = x;

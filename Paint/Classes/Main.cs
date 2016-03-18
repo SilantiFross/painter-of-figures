@@ -1,38 +1,50 @@
-﻿using System.Collections.Generic;
-using System.Drawing;
+﻿using System.Windows.Forms;
 using Paint.Classes.Figures;
+using Paint.Properties;
 using Point = Paint.Classes.Figures.Point;
-using Rectangle = Paint.Classes.Figures.Rectangle;
 
 namespace Paint.Classes
 {
     internal static class Main
     {
-        public static void DrawAllShapes()
+        public static Shape Shape;
+        public static Point PointMouseDown { get; set; }
+        public static Point PointMouseUp { get; set; }
+
+        public static void GetPointMouseDown(MouseEventArgs e)
         {
-            var ellipse = new Ellipse(new Point(1000, 400), 170, 100, Color.Red);
-            var line = new Line(new Point(400, 100), new Point(600, 700), Color.Black);
-            var rectangle = new Rectangle(new Point(700, 600), 300, 300, Color.Blue);
-            var triangle = new Triangle(new Point(800, 300), new Point(800, 400), new Point(700, 200), Color.Red);
-
-            #region InitializationListLines
-            var listOfLines = new List<Line>()
-            {
-                new Line(new Point(100, 300), new Point(100, 400), Color.Green),
-                new Line(new Point(100, 400), new Point(200, 100), Color.Red),
-                new Line(new Point(200, 100), new Point(600, 800), Color.Black)
-            };
-            #endregion
-
-            var polyline = new Polyline(listOfLines);
-
-            var listOfShape = new List<Shape>()
-            {
-                ellipse, triangle, line, rectangle, polyline
-            };
-
-            var listOfFigures = new ListOfFigures(listOfShape);
-            listOfFigures.DrawingListOfFigures();
+            PointMouseDown = new Point(e.X, e.Y);
         }
+
+        public static void GetPointMouseUp(MouseEventArgs e)
+        {
+            if (Shape != null)
+            {
+                PointMouseUp = new Point(e.X, e.Y);
+                DrawShape();
+            }
+            else
+            {
+                MessageBox.Show(Resources.Main_GetPointMouseUp_Message_Box);
+            }
+        }
+
+        public static void GetColorShape(Panel panelColor)
+        {
+            var colorDialog = new ColorDialog();
+
+            if (colorDialog.ShowDialog() == DialogResult.OK)
+            {
+                panelColor.BackColor = colorDialog.Color;
+                Shape.Color = panelColor.BackColor;
+            }
+        }
+
+        private static void DrawShape()
+        {
+            dynamic inheritorShape = Shape;
+            DrawingShapes.Draw(inheritorShape);
+        }
+
     }
 }

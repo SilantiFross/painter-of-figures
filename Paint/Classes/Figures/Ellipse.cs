@@ -8,6 +8,16 @@ namespace Paint.Classes.Figures
         private readonly float _radiusX;
         private readonly float _radiusY;
 
+        public Ellipse()
+        {
+            //
+        }
+
+        public Ellipse(Color color)
+        {
+            this.Color = color;
+        }
+
         public Ellipse(Point center, float radiusX, float radiusY, Color color)
         {
             this._center = center;

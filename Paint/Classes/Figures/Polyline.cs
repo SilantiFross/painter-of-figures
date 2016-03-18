@@ -6,6 +6,11 @@ namespace Paint.Classes.Figures
     {
         public List<Line> lines;
 
+        public Polyline()
+        {
+            //
+        }
+
         public Polyline(List<Line> points)
         {
             this.lines = points;
