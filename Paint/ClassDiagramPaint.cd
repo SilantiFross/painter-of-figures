@@ -23,18 +23,8 @@
       <FileName>Classes\Figures\Point.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Paint.Classes.Figures.Polyline">
-    <Position X="4.25" Y="3.25" Width="1.75" />
-    <Compartments>
-      <Compartment Name="Methods" Collapsed="true" />
-    </Compartments>
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Classes\Figures\Polyline.cs</FileName>
-    </TypeIdentifier>
-  </Class>
   <Class Name="Paint.Classes.Figures.Triangle">
-    <Position X="0.75" Y="3.25" Width="1.5" />
+    <Position X="2" Y="3.25" Width="1.5" />
     <Compartments>
       <Compartment Name="Fields" Collapsed="true" />
       <Compartment Name="Properties" Collapsed="true" />
@@ -57,17 +47,6 @@
       <FileName>Classes\Figures\Rectangle.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Paint.Classes.ListOfFigures">
-    <Position X="12.5" Y="3.25" Width="2" />
-    <Compartments>
-      <Compartment Name="Fields" Collapsed="true" />
-      <Compartment Name="Methods" Collapsed="true" />
-    </Compartments>
-    <TypeIdentifier>
-      <HashCode>AAIAAAAAAAQAAAAAAAAAAAAAABEAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Classes\ListOfFigures.cs</FileName>
-    </TypeIdentifier>
-  </Class>
   <Class Name="Paint.Classes.Figures.Shape">
     <Position X="5.5" Y="0.75" Width="1.5" />
     <TypeIdentifier>
@@ -76,7 +55,7 @@
     </TypeIdentifier>
   </Class>
   <Class Name="Paint.Classes.Figures.Ellipse">
-    <Position X="2.5" Y="3.25" Width="1.5" />
+    <Position X="4" Y="3.25" Width="1.5" />
     <Compartments>
       <Compartment Name="Methods" Collapsed="true" />
       <Compartment Name="Properties" Collapsed="true" />
@@ -87,7 +66,7 @@
     </TypeIdentifier>
   </Class>
   <Class Name="Paint.Classes.DrawingShapes">
-    <Position X="12.5" Y="0.75" Width="2" />
+    <Position X="12.5" Y="3.25" Width="2" />
     <Compartments>
       <Compartment Name="Fields" Collapsed="true" />
     </Compartments>
