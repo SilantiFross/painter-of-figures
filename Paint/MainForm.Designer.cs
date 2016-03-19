@@ -28,89 +28,89 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.radioButtonEllipse = new System.Windows.Forms.RadioButton();
-            this.radioButtonLine = new System.Windows.Forms.RadioButton();
-            this.radioButtonPoint = new System.Windows.Forms.RadioButton();
-            this.radioButtonRectangle = new System.Windows.Forms.RadioButton();
-            this.radioButtonTriangle = new System.Windows.Forms.RadioButton();
             this.groupBoxShapes = new System.Windows.Forms.GroupBox();
+            this.buttonTriangle = new System.Windows.Forms.Button();
+            this.buttonEllipse = new System.Windows.Forms.Button();
+            this.buttonRectangle = new System.Windows.Forms.Button();
+            this.buttonLine = new System.Windows.Forms.Button();
+            this.buttonPoint = new System.Windows.Forms.Button();
             this.panelColor = new System.Windows.Forms.Panel();
             this.groupBoxShapes.SuspendLayout();
             this.SuspendLayout();
             // 
-            // radioButtonEllipse
-            // 
-            this.radioButtonEllipse.AutoSize = true;
-            this.radioButtonEllipse.Location = new System.Drawing.Point(6, 92);
-            this.radioButtonEllipse.Name = "radioButtonEllipse";
-            this.radioButtonEllipse.Size = new System.Drawing.Size(55, 17);
-            this.radioButtonEllipse.TabIndex = 1;
-            this.radioButtonEllipse.Text = "Ellipse";
-            this.radioButtonEllipse.UseVisualStyleBackColor = true;
-            // 
-            // radioButtonLine
-            // 
-            this.radioButtonLine.AutoSize = true;
-            this.radioButtonLine.Location = new System.Drawing.Point(6, 46);
-            this.radioButtonLine.Name = "radioButtonLine";
-            this.radioButtonLine.Size = new System.Drawing.Size(45, 17);
-            this.radioButtonLine.TabIndex = 2;
-            this.radioButtonLine.TabStop = true;
-            this.radioButtonLine.Text = "Line";
-            this.radioButtonLine.UseVisualStyleBackColor = true;
-            // 
-            // radioButtonPoint
-            // 
-            this.radioButtonPoint.AutoSize = true;
-            this.radioButtonPoint.Location = new System.Drawing.Point(6, 23);
-            this.radioButtonPoint.Name = "radioButtonPoint";
-            this.radioButtonPoint.Size = new System.Drawing.Size(49, 17);
-            this.radioButtonPoint.TabIndex = 3;
-            this.radioButtonPoint.Text = "Point";
-            this.radioButtonPoint.UseVisualStyleBackColor = true;
-            // 
-            // radioButtonRectangle
-            // 
-            this.radioButtonRectangle.AutoSize = true;
-            this.radioButtonRectangle.Location = new System.Drawing.Point(6, 69);
-            this.radioButtonRectangle.Name = "radioButtonRectangle";
-            this.radioButtonRectangle.Size = new System.Drawing.Size(74, 17);
-            this.radioButtonRectangle.TabIndex = 5;
-            this.radioButtonRectangle.Text = "Rectangle";
-            this.radioButtonRectangle.UseVisualStyleBackColor = true;
-            // 
-            // radioButtonTriangle
-            // 
-            this.radioButtonTriangle.AutoSize = true;
-            this.radioButtonTriangle.Location = new System.Drawing.Point(6, 115);
-            this.radioButtonTriangle.Name = "radioButtonTriangle";
-            this.radioButtonTriangle.Size = new System.Drawing.Size(63, 17);
-            this.radioButtonTriangle.TabIndex = 6;
-            this.radioButtonTriangle.Text = "Triangle";
-            this.radioButtonTriangle.UseVisualStyleBackColor = true;
-            // 
             // groupBoxShapes
             // 
-            this.groupBoxShapes.Controls.Add(this.radioButtonRectangle);
-            this.groupBoxShapes.Controls.Add(this.radioButtonTriangle);
-            this.groupBoxShapes.Controls.Add(this.radioButtonPoint);
-            this.groupBoxShapes.Controls.Add(this.radioButtonEllipse);
-            this.groupBoxShapes.Controls.Add(this.radioButtonLine);
+            this.groupBoxShapes.Controls.Add(this.buttonTriangle);
+            this.groupBoxShapes.Controls.Add(this.buttonEllipse);
+            this.groupBoxShapes.Controls.Add(this.buttonRectangle);
+            this.groupBoxShapes.Controls.Add(this.buttonLine);
+            this.groupBoxShapes.Controls.Add(this.buttonPoint);
             this.groupBoxShapes.Location = new System.Drawing.Point(12, 12);
             this.groupBoxShapes.Name = "groupBoxShapes";
-            this.groupBoxShapes.Size = new System.Drawing.Size(81, 139);
+            this.groupBoxShapes.Size = new System.Drawing.Size(100, 176);
             this.groupBoxShapes.TabIndex = 7;
             this.groupBoxShapes.TabStop = false;
             this.groupBoxShapes.Text = "Shapes";
+            // 
+            // buttonTriangle
+            // 
+            this.buttonTriangle.Location = new System.Drawing.Point(6, 135);
+            this.buttonTriangle.Name = "buttonTriangle";
+            this.buttonTriangle.Size = new System.Drawing.Size(75, 23);
+            this.buttonTriangle.TabIndex = 9;
+            this.buttonTriangle.Text = "Triangle";
+            this.buttonTriangle.UseVisualStyleBackColor = true;
+            this.buttonTriangle.Click += new System.EventHandler(this.buttonTriangle_Click);
+            // 
+            // buttonEllipse
+            // 
+            this.buttonEllipse.Location = new System.Drawing.Point(6, 106);
+            this.buttonEllipse.Name = "buttonEllipse";
+            this.buttonEllipse.Size = new System.Drawing.Size(75, 23);
+            this.buttonEllipse.TabIndex = 3;
+            this.buttonEllipse.Text = "Ellipse";
+            this.buttonEllipse.UseVisualStyleBackColor = true;
+            this.buttonEllipse.Click += new System.EventHandler(this.buttonEllipse_Click);
+            // 
+            // buttonRectangle
+            // 
+            this.buttonRectangle.Location = new System.Drawing.Point(6, 77);
+            this.buttonRectangle.Name = "buttonRectangle";
+            this.buttonRectangle.Size = new System.Drawing.Size(75, 23);
+            this.buttonRectangle.TabIndex = 2;
+            this.buttonRectangle.Text = "Rectangle";
+            this.buttonRectangle.UseVisualStyleBackColor = true;
+            this.buttonRectangle.Click += new System.EventHandler(this.buttonRectangle_Click);
+            // 
+            // buttonLine
+            // 
+            this.buttonLine.Location = new System.Drawing.Point(6, 48);
+            this.buttonLine.Name = "buttonLine";
+            this.buttonLine.Size = new System.Drawing.Size(75, 23);
+            this.buttonLine.TabIndex = 1;
+            this.buttonLine.Text = "Line";
+            this.buttonLine.UseVisualStyleBackColor = true;
+            this.buttonLine.Click += new System.EventHandler(this.buttonLine_Click);
+            // 
+            // buttonPoint
+            // 
+            this.buttonPoint.Location = new System.Drawing.Point(6, 19);
+            this.buttonPoint.Name = "buttonPoint";
+            this.buttonPoint.Size = new System.Drawing.Size(75, 23);
+            this.buttonPoint.TabIndex = 0;
+            this.buttonPoint.Text = "Point";
+            this.buttonPoint.UseVisualStyleBackColor = true;
+            this.buttonPoint.Click += new System.EventHandler(this.buttonPoint_Click);
             // 
             // panelColor
             // 
             this.panelColor.BackColor = System.Drawing.Color.Black;
             this.panelColor.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panelColor.Location = new System.Drawing.Point(99, 12);
+            this.panelColor.Location = new System.Drawing.Point(118, 12);
             this.panelColor.Name = "panelColor";
             this.panelColor.Size = new System.Drawing.Size(20, 20);
             this.panelColor.TabIndex = 8;
+            this.panelColor.Click += new System.EventHandler(this.panelColor_Click);
             // 
             // MainForm
             // 
@@ -128,19 +128,18 @@
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.MainForm_MouseDown);
             this.MouseUp += new System.Windows.Forms.MouseEventHandler(this.MainForm_MouseUp);
             this.groupBoxShapes.ResumeLayout(false);
-            this.groupBoxShapes.PerformLayout();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-        private System.Windows.Forms.RadioButton radioButtonEllipse;
-        private System.Windows.Forms.RadioButton radioButtonLine;
-        private System.Windows.Forms.RadioButton radioButtonPoint;
-        private System.Windows.Forms.RadioButton radioButtonRectangle;
-        private System.Windows.Forms.RadioButton radioButtonTriangle;
         private System.Windows.Forms.GroupBox groupBoxShapes;
         private System.Windows.Forms.Panel panelColor;
+        private System.Windows.Forms.Button buttonPoint;
+        private System.Windows.Forms.Button buttonLine;
+        private System.Windows.Forms.Button buttonEllipse;
+        private System.Windows.Forms.Button buttonRectangle;
+        private System.Windows.Forms.Button buttonTriangle;
     }
 }
 

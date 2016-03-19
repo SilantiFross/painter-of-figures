@@ -46,6 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Classes\CreatorShapes.cs" />
     <Compile Include="Classes\DrawingShapes.cs" />
     <Compile Include="Classes\Figures\Ellipse.cs" />
     <Compile Include="Classes\Figures\Line.cs" />
@@ -53,7 +54,8 @@
     <Compile Include="Classes\Figures\Point.cs" />
     <Compile Include="Classes\Figures\Rectangle.cs" />
     <Compile Include="Classes\Figures\Shape.cs" />
-    <Compile Include="Classes\Context.cs" />
+    <Compile Include="Classes\MouseController.cs" />
+    <Compile Include="Classes\StoreFigures.cs" />
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>

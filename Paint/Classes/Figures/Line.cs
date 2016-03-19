@@ -7,16 +7,6 @@ namespace Paint.Classes.Figures
         private readonly Point _pointA;
         private readonly Point _pointB;
 
-        public Line()
-        {
-            //
-        }
-
-        public Line(Color color)
-        {
-            this.Color = color;
-        }
-
         public Line(Point pointA, Point pointB, Color color)
         {
             this._pointA = pointA;

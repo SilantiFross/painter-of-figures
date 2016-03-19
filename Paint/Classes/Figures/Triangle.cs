@@ -8,16 +8,6 @@ namespace Paint.Classes.Figures
         private readonly Point _pointB;
         private readonly Point _pointC;
 
-        public Triangle()
-        {
-            //
-        }
-
-        public Triangle(Color color)
-        {
-            this.Color = color;
-        }
-
         public Triangle(Point pointA, Point pointB, Point pointC, Color color)
         {
             this._pointA = pointA;

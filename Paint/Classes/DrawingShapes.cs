@@ -15,47 +15,40 @@ namespace Paint.Classes
         {
             var penColor = new Pen(ellipse.Color);
 
-            FormGraphics.DrawEllipse(penColor, Context.PointMouseDown.x, Context.PointMouseDown.y,
-                Context.PointMouseUp.x - Context.PointMouseDown.x,
-                Context.PointMouseUp.y - Context.PointMouseDown.y);
+            FormGraphics.DrawEllipse(penColor, ellipse.GetTopLeftX, ellipse.GetTopLeftY,
+                ellipse.GetWidth, ellipse.GetHeight);
         }
 
         public static void Draw(Line line)
-        { 
+        {
             var penColor = new Pen(line.Color);
 
-            FormGraphics.DrawLine(penColor, (PointF)Context.PointMouseDown, (PointF)Context.PointMouseUp);
+            FormGraphics.DrawLine(penColor, (PointF)line.GetPointA, (PointF)line.GetPointB);
         }
 
         public static void Draw(Point point)
         {
             var penColor = new Pen(point.Color);
 
-            FormGraphics.DrawLine(penColor, Context.PointMouseDown.x, Context.PointMouseDown.y,
-                Context.PointMouseDown.x + 1, Context.PointMouseDown.y);
+            FormGraphics.DrawLine(penColor, point.x, point.y,
+                point.x + 1, point.y);
         }
 
         public static void Draw(Rectangle rectangle)
         {
             var penColor = new Pen(rectangle.Color);
 
-            FormGraphics.DrawRectangle(penColor, Context.PointMouseDown.x, Context.PointMouseDown.y,
-                Context.PointMouseUp.x - Context.PointMouseDown.x,
-                Context.PointMouseUp.y - Context.PointMouseDown.y);
+            FormGraphics.DrawRectangle(penColor, rectangle.GetTopLeftX, rectangle.GetTopLeftY, 
+                rectangle.GetHeight, rectangle.GetWidth);
         }
 
         public static void Draw(Triangle triangle)
         {
             var penColor = new Pen(triangle.Color);
 
-            FormGraphics.DrawLine(penColor, (Context.PointMouseDown.x + Context.PointMouseUp.x) / 2, Context.PointMouseDown.y,
-                Context.PointMouseDown.x, Context.PointMouseUp.y);
-
-            FormGraphics.DrawLine(penColor, Context.PointMouseDown.x, Context.PointMouseUp.y,
-                Context.PointMouseUp.x, Context.PointMouseUp.y);
-
-            FormGraphics.DrawLine(penColor, Context.PointMouseUp.x, Context.PointMouseUp.y,
-                (Context.PointMouseDown.x + Context.PointMouseUp.x) / 2, Context.PointMouseDown.y);
+            FormGraphics.DrawLine(penColor, (PointF)triangle.GetPointA, (PointF)triangle.GetPointB);
+            FormGraphics.DrawLine(penColor, (PointF)triangle.GetPointB, (PointF)triangle.GetPointC);
+            FormGraphics.DrawLine(penColor, (PointF)triangle.GetPointC, (PointF)triangle.GetPointA);
 
         }
     }
