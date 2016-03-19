@@ -47,7 +47,6 @@
             this.radioButtonEllipse.TabIndex = 1;
             this.radioButtonEllipse.Text = "Ellipse";
             this.radioButtonEllipse.UseVisualStyleBackColor = true;
-            this.radioButtonEllipse.CheckedChanged += new System.EventHandler(this.radioButtonEllipse_CheckedChanged);
             // 
             // radioButtonLine
             // 
@@ -59,7 +58,6 @@
             this.radioButtonLine.TabStop = true;
             this.radioButtonLine.Text = "Line";
             this.radioButtonLine.UseVisualStyleBackColor = true;
-            this.radioButtonLine.CheckedChanged += new System.EventHandler(this.radioButtonLine_CheckedChanged);
             // 
             // radioButtonPoint
             // 
@@ -70,7 +68,6 @@
             this.radioButtonPoint.TabIndex = 3;
             this.radioButtonPoint.Text = "Point";
             this.radioButtonPoint.UseVisualStyleBackColor = true;
-            this.radioButtonPoint.CheckedChanged += new System.EventHandler(this.radioButtonPoint_CheckedChanged);
             // 
             // radioButtonRectangle
             // 
@@ -81,7 +78,6 @@
             this.radioButtonRectangle.TabIndex = 5;
             this.radioButtonRectangle.Text = "Rectangle";
             this.radioButtonRectangle.UseVisualStyleBackColor = true;
-            this.radioButtonRectangle.CheckedChanged += new System.EventHandler(this.radioButtonRectangle_CheckedChanged);
             // 
             // radioButtonTriangle
             // 
@@ -92,7 +88,6 @@
             this.radioButtonTriangle.TabIndex = 6;
             this.radioButtonTriangle.Text = "Triangle";
             this.radioButtonTriangle.UseVisualStyleBackColor = true;
-            this.radioButtonTriangle.CheckedChanged += new System.EventHandler(this.radioButtonTriangle_CheckedChanged);
             // 
             // groupBoxShapes
             // 
@@ -116,7 +111,6 @@
             this.panelColor.Name = "panelColor";
             this.panelColor.Size = new System.Drawing.Size(20, 20);
             this.panelColor.TabIndex = 8;
-            this.panelColor.Click += new System.EventHandler(this.panelColor_Click);
             // 
             // MainForm
             // 
