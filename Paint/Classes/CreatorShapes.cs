@@ -1,4 +1,5 @@
-﻿using System.Drawing;
+﻿using System.Collections.Generic;
+using System.Drawing;
 using Paint.Classes.Figures;
 using Point = Paint.Classes.Figures.Point;
 using Rectangle = Paint.Classes.Figures.Rectangle;
@@ -38,12 +39,23 @@ namespace Paint.Classes
 
         public static void CreateTriangle(Point pointA, Point pointB, Color color)
         {
-            var pointOne = new Point((pointA.x + pointB.x) / 2, pointA.y);
-            var pointTwo = new Point(pointA.x, pointB.y);
-            var pointThree = new Point(pointB.x, pointB.y);
-            var triangle = new Triangle(pointOne, pointTwo, pointThree, color);
+            var pointOfTriangle = CreatePointsForTriangle(pointA, pointB);
+            var triangle = new Triangle(pointOfTriangle[0], pointOfTriangle[1], pointOfTriangle[2], color);
             StoreFigures.ShapesList.Add(triangle);
             DrawingShapes.Draw(triangle);
         }
+
+        private static List<Point> CreatePointsForTriangle(Point pointA, Point pointB)
+        {
+            var pointOne = new Point((pointA.x + pointB.x) / 2, pointA.y);
+            var pointTwo = new Point(pointA.x, pointB.y);
+            var pointThree = new Point(pointB.x, pointB.y);
+
+            return new List<Point>()
+            {
+                pointOne, pointTwo, pointThree
+            };
+        }
+
     }
 }
