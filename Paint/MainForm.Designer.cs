@@ -134,12 +134,12 @@
 
         #endregion
         private System.Windows.Forms.GroupBox groupBoxShapes;
-        private System.Windows.Forms.Panel panelColor;
         private System.Windows.Forms.Button buttonPoint;
         private System.Windows.Forms.Button buttonLine;
         private System.Windows.Forms.Button buttonEllipse;
         private System.Windows.Forms.Button buttonRectangle;
         private System.Windows.Forms.Button buttonTriangle;
+        private System.Windows.Forms.Panel panelColor;
     }
 }
 

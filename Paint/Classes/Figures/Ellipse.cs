@@ -4,24 +4,24 @@ namespace Paint.Classes.Figures
 {
     internal class Ellipse: Shape
     {
-        private readonly Point TopLeft;
-        private readonly float Width;
-        private readonly float Height;
+        private readonly Point _topLeft;
+        private readonly float _width;
+        private readonly float _height;
 
         public Ellipse(Point topLeft, float width, float height, Color color)
         {
-            this.TopLeft = topLeft;
-            this.Width = width;
-            this.Height = height;
+            this._topLeft = topLeft;
+            this._width = width;
+            this._height = height;
             this.Color = color;
         }
 
-        public float GetTopLeftX => TopLeft.x;
+        public float GetTopLeftX => _topLeft.x;
 
-        public float GetTopLeftY => TopLeft.y;
+        public float GetTopLeftY => _topLeft.y;
 
-        public float GetWidth => Width;
+        public float GetWidth => _width;
 
-        public float GetHeight => Height;
+        public float GetHeight => _height;
     }
 }

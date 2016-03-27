@@ -5,6 +5,8 @@ namespace Paint
 {
     public partial class MainForm : Form
     {
+        readonly MouseController _mouseController = new MouseController();
+
         public MainForm()
         {
             InitializeComponent();
@@ -12,17 +14,17 @@ namespace Paint
 
         private void MainForm_MouseDown(object sender, MouseEventArgs e)
         {
-            MouseController.GetPointMouseDown(e);
+            _mouseController.GetPointMouseDown(e);
         }
 
         private void MainForm_MouseUp(object sender, MouseEventArgs e)
         {
-            MouseController.GetPointMouseUp(e);
+            _mouseController.GetPointMouseUp(e);
         }
 
         private void panelColor_Click(object sender, System.EventArgs e)
         {
-           // StoreFigures.GetColorShape(panelColor);
+            CreatorShapes.SetColorShape(panelColor);
         }
 
         private void buttonPoint_Click(object sender, System.EventArgs e)

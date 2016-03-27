@@ -51,5 +51,6 @@ namespace Paint.Classes
             FormGraphics.DrawLine(penColor, (PointF)triangle.GetPointC, (PointF)triangle.GetPointA);
 
         }
+
     }
 }
