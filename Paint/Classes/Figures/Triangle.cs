@@ -2,7 +2,7 @@
 
 namespace Paint.Classes.Figures
 {
-    internal class Triangle: Shape
+    public class Triangle: Shape
     {
         private readonly Point _pointA;
         private readonly Point _pointB;

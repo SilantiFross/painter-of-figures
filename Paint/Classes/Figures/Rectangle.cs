@@ -2,7 +2,7 @@
 
 namespace Paint.Classes.Figures
 {
-    internal class Rectangle: Shape
+    public class Rectangle: Shape
     {
         private readonly Point _topLeft;
         private readonly float _height;

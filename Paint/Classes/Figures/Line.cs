@@ -2,7 +2,7 @@
 
 namespace Paint.Classes.Figures
 {
-    internal class Line: Shape
+    public class Line: Shape
     {
         private readonly Point _pointA;
         private readonly Point _pointB;

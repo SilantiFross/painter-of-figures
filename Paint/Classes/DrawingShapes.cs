@@ -6,12 +6,12 @@ using Rectangle = Paint.Classes.Figures.Rectangle;
 
 namespace Paint.Classes
 {
-    internal static class DrawingShapes
+    internal class DrawingShapes
     {
         private static readonly Form FormForDrawing = Form.ActiveForm;
         private static readonly Graphics FormGraphics = FormForDrawing.CreateGraphics();
 
-        public static void Draw(Ellipse ellipse)
+        public void Draw(Ellipse ellipse)
         {
             var penColor = new Pen(ellipse.Color);
 
@@ -19,14 +19,14 @@ namespace Paint.Classes
                 ellipse.GetWidth, ellipse.GetHeight);
         }
 
-        public static void Draw(Line line)
+        public void Draw(Line line)
         {
             var penColor = new Pen(line.Color);
 
             FormGraphics.DrawLine(penColor, (PointF)line.GetPointA, (PointF)line.GetPointB);
         }
 
-        public static void Draw(Point point)
+        public void Draw(Point point)
         {
             var penColor = new Pen(point.Color);
 
@@ -34,7 +34,7 @@ namespace Paint.Classes
                 point.x + 1, point.y);
         }
 
-        public static void Draw(Rectangle rectangle)
+        public void Draw(Rectangle rectangle)
         {
             var penColor = new Pen(rectangle.Color);
 
@@ -42,7 +42,7 @@ namespace Paint.Classes
                 rectangle.GetHeight, rectangle.GetWidth);
         }
 
-        public static void Draw(Triangle triangle)
+        public void Draw(Triangle triangle)
         {
             var penColor = new Pen(triangle.Color);
 

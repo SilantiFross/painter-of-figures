@@ -2,7 +2,7 @@
 
 namespace Paint.Classes.Figures
 {
-    internal class Ellipse: Shape
+    public class Ellipse: Shape
     {
         private readonly Point _topLeft;
         private readonly float _width;
