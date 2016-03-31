@@ -35,7 +35,6 @@
             this.buttonLine = new System.Windows.Forms.Button();
             this.buttonPoint = new System.Windows.Forms.Button();
             this.panelColor = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
             this.groupBoxShapes.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -113,21 +112,11 @@
             this.panelColor.TabIndex = 8;
             this.panelColor.Click += new System.EventHandler(this.panelColor_Click);
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(331, 364);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(35, 13);
-            this.label1.TabIndex = 9;
-            this.label1.Text = "label1";
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1904, 1041);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.panelColor);
             this.Controls.Add(this.groupBoxShapes);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -140,7 +129,6 @@
             this.MouseUp += new System.Windows.Forms.MouseEventHandler(this.MainForm_MouseUp);
             this.groupBoxShapes.ResumeLayout(false);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -152,7 +140,6 @@
         private System.Windows.Forms.Button buttonRectangle;
         private System.Windows.Forms.Button buttonTriangle;
         private System.Windows.Forms.Panel panelColor;
-        private System.Windows.Forms.Label label1;
     }
 }
 
