@@ -35,9 +35,7 @@
             this.buttonLine = new System.Windows.Forms.Button();
             this.buttonPoint = new System.Windows.Forms.Button();
             this.panelColor = new System.Windows.Forms.Panel();
-            this.BoxCanvas = new System.Windows.Forms.PictureBox();
             this.groupBoxShapes.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.BoxCanvas)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBoxShapes
@@ -114,26 +112,11 @@
             this.panelColor.TabIndex = 8;
             this.panelColor.Click += new System.EventHandler(this.panelColor_Click);
             // 
-            // BoxCanvas
-            // 
-            this.BoxCanvas.BackColor = System.Drawing.Color.White;
-            this.BoxCanvas.ErrorImage = null;
-            this.BoxCanvas.Location = new System.Drawing.Point(144, 12);
-            this.BoxCanvas.Name = "BoxCanvas";
-            this.BoxCanvas.Size = new System.Drawing.Size(1748, 1017);
-            this.BoxCanvas.TabIndex = 9;
-            this.BoxCanvas.TabStop = false;
-            this.BoxCanvas.Paint += new System.Windows.Forms.PaintEventHandler(this.BoxCanvas_Paint);
-            this.BoxCanvas.MouseDown += new System.Windows.Forms.MouseEventHandler(this.BoxCanvas_MouseDown);
-            this.BoxCanvas.MouseMove += new System.Windows.Forms.MouseEventHandler(this.BoxCanvas_MouseMove);
-            this.BoxCanvas.MouseUp += new System.Windows.Forms.MouseEventHandler(this.BoxCanvas_MouseUp);
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1904, 1041);
-            this.Controls.Add(this.BoxCanvas);
             this.Controls.Add(this.panelColor);
             this.Controls.Add(this.groupBoxShapes);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -142,8 +125,9 @@
             this.ShowIcon = false;
             this.Text = "Paint";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.MainForm_MouseDown);
+            this.MouseUp += new System.Windows.Forms.MouseEventHandler(this.MainForm_MouseUp);
             this.groupBoxShapes.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.BoxCanvas)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -156,7 +140,6 @@
         private System.Windows.Forms.Button buttonRectangle;
         private System.Windows.Forms.Button buttonTriangle;
         private System.Windows.Forms.Panel panelColor;
-        private System.Windows.Forms.PictureBox BoxCanvas;
     }
 }
 

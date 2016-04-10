@@ -5,9 +5,8 @@ namespace Paint.Classes
 {
     public class MouseController
     {
-        public Point PointMouseDown;
-        public Point PointMouseUp;
-        public bool IsMouseDown;
+        public static Point PointMouseDown;
+        public static Point PointMouseUp;
 
         public void GetPointMouseDown(MouseEventArgs e)
         {

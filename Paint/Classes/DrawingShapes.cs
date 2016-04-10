@@ -8,51 +8,47 @@ namespace Paint.Classes
 {
     internal class DrawingShapes
     {
-        private static Graphics formGraphics;
-
-        public DrawingShapes(Control pictureBox)
-        {
-            formGraphics = pictureBox.CreateGraphics();
-        }
+        private static readonly Form FormForDrawing = Form.ActiveForm;
+        private static readonly Graphics FormGraphics = FormForDrawing.CreateGraphics();
 
         public void Draw(Ellipse ellipse)
         {
-            var penColor = new Pen(ellipse.Color, 2);
+            var penColor = new Pen(ellipse.Color);
 
-            formGraphics.DrawEllipse(penColor, ellipse.GetTopLeftX, ellipse.GetTopLeftY,
+            FormGraphics.DrawEllipse(penColor, ellipse.GetTopLeftX, ellipse.GetTopLeftY,
                 ellipse.GetWidth, ellipse.GetHeight);
         }
 
         public void Draw(Line line)
         {
-            var penColor = new Pen(line.Color, 2);
+            var penColor = new Pen(line.Color);
 
-            formGraphics.DrawLine(penColor, (PointF)line.GetPointA, (PointF)line.GetPointB);
+            FormGraphics.DrawLine(penColor, (PointF)line.GetPointA, (PointF)line.GetPointB);
         }
 
         public void Draw(Point point)
         {
-            var penColor = new Pen(point.Color, 2);
+            var penColor = new Pen(point.Color);
 
-            formGraphics.DrawLine(penColor, point.x, point.y,
+            FormGraphics.DrawLine(penColor, point.x, point.y,
                 point.x + 1, point.y);
         }
 
         public void Draw(Rectangle rectangle)
         {
-            var penColor = new Pen(rectangle.Color, 2);
+            var penColor = new Pen(rectangle.Color);
 
-            formGraphics.DrawRectangle(penColor, rectangle.GetTopLeftX, rectangle.GetTopLeftY, 
+            FormGraphics.DrawRectangle(penColor, rectangle.GetTopLeftX, rectangle.GetTopLeftY, 
                 rectangle.GetHeight, rectangle.GetWidth);
         }
 
         public void Draw(Triangle triangle)
         {
-            var penColor = new Pen(triangle.Color, 2);
+            var penColor = new Pen(triangle.Color);
 
-            formGraphics.DrawLine(penColor, (PointF)triangle.GetPointA, (PointF)triangle.GetPointB);
-            formGraphics.DrawLine(penColor, (PointF)triangle.GetPointB, (PointF)triangle.GetPointC);
-            formGraphics.DrawLine(penColor, (PointF)triangle.GetPointC, (PointF)triangle.GetPointA);
+            FormGraphics.DrawLine(penColor, (PointF)triangle.GetPointA, (PointF)triangle.GetPointB);
+            FormGraphics.DrawLine(penColor, (PointF)triangle.GetPointB, (PointF)triangle.GetPointC);
+            FormGraphics.DrawLine(penColor, (PointF)triangle.GetPointC, (PointF)triangle.GetPointA);
 
         }
 
