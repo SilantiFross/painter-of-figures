@@ -5,9 +5,9 @@ namespace Paint
 {
     public partial class MainForm : Form
     {
-        private readonly MouseController mouseController = new MouseController();
-        private readonly CreatorShapes creatorShapes = new CreatorShapes();
-        private readonly DrawingShapes drawingShapes = new DrawingShapes();
+        private readonly MouseController _mouseController = new MouseController();
+        private readonly CreatorShapes _creatorShapes = new CreatorShapes();
+        private readonly DrawingShapes _drawingShapes = new DrawingShapes();
 
         public MainForm()
         {
@@ -16,55 +16,55 @@ namespace Paint
 
         private void MainForm_MouseDown(object sender, MouseEventArgs e)
         {
-            mouseController.GetPointMouseDown(e);
+            _mouseController.GetPointMouseDown(e);
         }
 
         private void MainForm_MouseUp(object sender, MouseEventArgs e)
         {
-            mouseController.GetPointMouseUp(e);
+            _mouseController.GetPointMouseUp(e);
         }
 
         private void panelColor_Click(object sender, System.EventArgs e)
         {
-            creatorShapes.SetColorShape(panelColor);
+            _creatorShapes.SetColorShape(panelColor);
         }
 
         private void buttonPoint_Click(object sender, System.EventArgs e)
         {
-            var point = creatorShapes.CreatePoint(MouseController.PointMouseDown, panelColor.BackColor);
-            drawingShapes.Draw(point);
+            var point = _creatorShapes.CreatePoint(MouseController.PointMouseDown, panelColor.BackColor);
+            _drawingShapes.Draw(point);
             StoreFigures.ShapesList.Add(point);
         }
 
         private void buttonLine_Click(object sender, System.EventArgs e)
         {
-            var line = creatorShapes.CreateLine(MouseController.PointMouseDown, MouseController.PointMouseUp,
+            var line = _creatorShapes.CreateLine(MouseController.PointMouseDown, MouseController.PointMouseUp,
                 panelColor.BackColor);
-            drawingShapes.Draw(line);
+            _drawingShapes.Draw(line);
             StoreFigures.ShapesList.Add(line);
         }
 
         private void buttonRectangle_Click(object sender, System.EventArgs e)
         {
-            var rectangle = creatorShapes.CreateRectangle(MouseController.PointMouseDown, MouseController.PointMouseUp,
+            var rectangle = _creatorShapes.CreateRectangle(MouseController.PointMouseDown, MouseController.PointMouseUp,
                 panelColor.BackColor);
-            drawingShapes.Draw(rectangle);
+            _drawingShapes.Draw(rectangle);
             StoreFigures.ShapesList.Add(rectangle);
         }
 
         private void buttonEllipse_Click(object sender, System.EventArgs e)
         {
-            var ellipse = creatorShapes.CreateEllipse(MouseController.PointMouseDown, MouseController.PointMouseUp,
+            var ellipse = _creatorShapes.CreateEllipse(MouseController.PointMouseDown, MouseController.PointMouseUp,
                 panelColor.BackColor);
-            drawingShapes.Draw(ellipse);
+            _drawingShapes.Draw(ellipse);
             StoreFigures.ShapesList.Add(ellipse);
         }
 
         private void buttonTriangle_Click(object sender, System.EventArgs e)
         {
-            var triangle = creatorShapes.CreateTriangle(MouseController.PointMouseDown, MouseController.PointMouseUp,
+            var triangle = _creatorShapes.CreateTriangle(MouseController.PointMouseDown, MouseController.PointMouseUp,
                 panelColor.BackColor);
-            drawingShapes.Draw(triangle);
+            _drawingShapes.Draw(triangle);
             StoreFigures.ShapesList.Add(triangle);
         }
     }
