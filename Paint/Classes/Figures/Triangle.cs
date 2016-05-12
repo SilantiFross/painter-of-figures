@@ -1,12 +1,17 @@
-﻿using System.Drawing;
+﻿using System;
+using System.Drawing;
 
 namespace Paint.Classes.Figures
 {
+    [Serializable]
     public class Triangle: Shape
     {
-        private readonly Point _pointA;
-        private readonly Point _pointB;
-        private readonly Point _pointC;
+        public Point _pointA;
+        public Point _pointB;
+        public Point _pointC;
+
+        public Triangle()
+        { }
 
         public Triangle(Point pointA, Point pointB, Point pointC, Color color)
         {

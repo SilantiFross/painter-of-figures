@@ -1,13 +1,16 @@
-﻿using System.Windows.Forms;
+﻿using System.IO;
+using System.Windows.Forms;
+using System.Xml.Serialization;
 using Paint.Classes;
 
 namespace Paint
 {
     public partial class MainForm : Form
     {
-        private readonly MouseController _mouseController = new MouseController();
-        private readonly CreatorShapes _creatorShapes = new CreatorShapes();
-        private readonly DrawingShapes _drawingShapes = new DrawingShapes();
+        private MouseController mouseController = new MouseController();
+        private CreatorShapes creatorShapes = new CreatorShapes();
+        private DrawingShapes drawingShapes = new DrawingShapes();
+        private StoreFigures storeFigures = new StoreFigures();
 
         public MainForm()
         {
@@ -16,56 +19,66 @@ namespace Paint
 
         private void MainForm_MouseDown(object sender, MouseEventArgs e)
         {
-            _mouseController.GetPointMouseDown(e);
+            mouseController.GetPointMouseDown(e);
         }
 
         private void MainForm_MouseUp(object sender, MouseEventArgs e)
         {
-            _mouseController.GetPointMouseUp(e);
+            mouseController.GetPointMouseUp(e);
         }
 
         private void panelColor_Click(object sender, System.EventArgs e)
         {
-            _creatorShapes.SetColorShape(panelColor);
+            creatorShapes.SetColorShape(panelColor);
         }
 
         private void buttonPoint_Click(object sender, System.EventArgs e)
         {
-            var point = _creatorShapes.CreatePoint(MouseController.PointMouseDown, panelColor.BackColor);
-            _drawingShapes.Draw(point);
-            StoreFigures.ShapesList.Add(point);
+            var point = creatorShapes.CreatePoint(MouseController.PointMouseDown, panelColor.BackColor);
+            drawingShapes.Draw(point);
+            storeFigures.ShapesList.Add(point);
         }
 
         private void buttonLine_Click(object sender, System.EventArgs e)
         {
-            var line = _creatorShapes.CreateLine(MouseController.PointMouseDown, MouseController.PointMouseUp,
+            var line = creatorShapes.CreateLine(MouseController.PointMouseDown, MouseController.PointMouseUp,
                 panelColor.BackColor);
-            _drawingShapes.Draw(line);
-            StoreFigures.ShapesList.Add(line);
+            drawingShapes.Draw(line);
+            storeFigures.ShapesList.Add(line);
         }
 
         private void buttonRectangle_Click(object sender, System.EventArgs e)
         {
-            var rectangle = _creatorShapes.CreateRectangle(MouseController.PointMouseDown, MouseController.PointMouseUp,
+            var rectangle = creatorShapes.CreateRectangle(MouseController.PointMouseDown, MouseController.PointMouseUp,
                 panelColor.BackColor);
-            _drawingShapes.Draw(rectangle);
-            StoreFigures.ShapesList.Add(rectangle);
+            drawingShapes.Draw(rectangle);
+            storeFigures.ShapesList.Add(rectangle);
         }
 
         private void buttonEllipse_Click(object sender, System.EventArgs e)
         {
-            var ellipse = _creatorShapes.CreateEllipse(MouseController.PointMouseDown, MouseController.PointMouseUp,
+            var ellipse = creatorShapes.CreateEllipse(MouseController.PointMouseDown, MouseController.PointMouseUp,
                 panelColor.BackColor);
-            _drawingShapes.Draw(ellipse);
-            StoreFigures.ShapesList.Add(ellipse);
+            drawingShapes.Draw(ellipse);
+            storeFigures.ShapesList.Add(ellipse);
         }
 
         private void buttonTriangle_Click(object sender, System.EventArgs e)
         {
-            var triangle = _creatorShapes.CreateTriangle(MouseController.PointMouseDown, MouseController.PointMouseUp,
+            var triangle = creatorShapes.CreateTriangle(MouseController.PointMouseDown, MouseController.PointMouseUp,
                 panelColor.BackColor);
-            _drawingShapes.Draw(triangle);
-            StoreFigures.ShapesList.Add(triangle);
+            drawingShapes.Draw(triangle);
+            storeFigures.ShapesList.Add(triangle);
+        }
+
+        private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            var formatter = new XmlSerializer(typeof(StoreFigures));
+
+            using (var fileStream = new FileStream("storage.xml", FileMode.Create))
+            {
+                formatter.Serialize(fileStream, storeFigures);
+            }
         }
     }
 }

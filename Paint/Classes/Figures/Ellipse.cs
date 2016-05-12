@@ -1,12 +1,17 @@
-﻿using System.Drawing;
+﻿using System;
+using System.Drawing;
 
 namespace Paint.Classes.Figures
 {
+    [Serializable]
     public class Ellipse: Shape
     {
-        private readonly Point _topLeft;
-        private readonly float _width;
-        private readonly float _height;
+        public  Point _topLeft;
+        public  float _width;
+        public  float _height;
+
+        public Ellipse()
+        { }
 
         public Ellipse(Point topLeft, float width, float height, Color color)
         {

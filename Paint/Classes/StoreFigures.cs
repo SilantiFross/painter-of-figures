@@ -1,11 +1,18 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
 using Paint.Classes.Figures;
 
 namespace Paint.Classes
 {
-    internal static class StoreFigures
+    [Serializable]
+    [XmlInclude(typeof(Ellipse)), XmlInclude(typeof(Line)), XmlInclude(typeof(Point)),
+        XmlInclude(typeof(Rectangle)), XmlInclude(typeof(Triangle)), XmlInclude(typeof(Shape))]
+    public class StoreFigures
     {
-        //TODO: Serialization and deserialization
-        public static readonly List<Shape> ShapesList = new List<Shape>();
+        public List<Shape> ShapesList = new List<Shape>();
+
+        public StoreFigures()
+        { }
     }
 }

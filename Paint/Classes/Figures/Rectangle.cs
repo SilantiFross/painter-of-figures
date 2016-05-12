@@ -1,12 +1,17 @@
-﻿using System.Drawing;
+﻿using System;
+using System.Drawing;
 
 namespace Paint.Classes.Figures
 {
+    [Serializable]
     public class Rectangle: Shape
     {
-        private readonly Point _topLeft;
-        private readonly float _height;
-        private readonly float _width;
+        public Point _topLeft;
+        public float _height;
+        public float _width;
+
+        public Rectangle()
+        { }
 
         public Rectangle(Point topLeft, float height, float width, Color color)
         {

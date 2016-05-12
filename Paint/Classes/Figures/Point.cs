@@ -1,11 +1,16 @@
-﻿using System.Drawing;
+﻿using System;
+using System.Drawing;
 
 namespace Paint.Classes.Figures
 {
+    [Serializable]
     public class Point: Shape
     {
         public float x;
         public float y;
+
+        public Point()
+        { }
 
         public Point(float x, float y)
         {

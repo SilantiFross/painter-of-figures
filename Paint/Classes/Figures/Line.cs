@@ -1,11 +1,16 @@
-﻿using System.Drawing;
+﻿using System;
+using System.Drawing;
 
 namespace Paint.Classes.Figures
 {
+    [Serializable]
     public class Line: Shape
     {
-        private readonly Point _pointA;
-        private readonly Point _pointB;
+        public Point _pointA;
+        public Point _pointB;
+
+        public Line()
+        { }
 
         public Line(Point pointA, Point pointB, Color color)
         {

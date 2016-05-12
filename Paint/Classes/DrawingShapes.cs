@@ -38,7 +38,7 @@ namespace Paint.Classes
         {
             var penColor = new Pen(rectangle.Color);
 
-            FormGraphics.DrawRectangle(penColor, rectangle.GetTopLeftX, rectangle.GetTopLeftY, 
+            FormGraphics.DrawRectangle(penColor, rectangle.GetTopLeftX, rectangle.GetTopLeftY,
                 rectangle.GetHeight, rectangle.GetWidth);
         }
 
@@ -49,7 +49,6 @@ namespace Paint.Classes
             FormGraphics.DrawLine(penColor, (PointF)triangle.GetPointA, (PointF)triangle.GetPointB);
             FormGraphics.DrawLine(penColor, (PointF)triangle.GetPointB, (PointF)triangle.GetPointC);
             FormGraphics.DrawLine(penColor, (PointF)triangle.GetPointC, (PointF)triangle.GetPointA);
-
         }
 
     }
