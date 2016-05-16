@@ -35,6 +35,7 @@
             this.buttonLine = new System.Windows.Forms.Button();
             this.buttonPoint = new System.Windows.Forms.Button();
             this.panelColor = new System.Windows.Forms.Panel();
+            this.buttonOpen = new System.Windows.Forms.Button();
             this.groupBoxShapes.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -112,11 +113,22 @@
             this.panelColor.TabIndex = 8;
             this.panelColor.Click += new System.EventHandler(this.panelColor_Click);
             // 
+            // buttonOpen
+            // 
+            this.buttonOpen.Location = new System.Drawing.Point(18, 194);
+            this.buttonOpen.Name = "buttonOpen";
+            this.buttonOpen.Size = new System.Drawing.Size(75, 23);
+            this.buttonOpen.TabIndex = 9;
+            this.buttonOpen.Text = "Open";
+            this.buttonOpen.UseVisualStyleBackColor = true;
+            this.buttonOpen.Click += new System.EventHandler(this.buttonOpen_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1904, 1041);
+            this.Controls.Add(this.buttonOpen);
             this.Controls.Add(this.panelColor);
             this.Controls.Add(this.groupBoxShapes);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -141,6 +153,7 @@
         private System.Windows.Forms.Button buttonRectangle;
         private System.Windows.Forms.Button buttonTriangle;
         private System.Windows.Forms.Panel panelColor;
+        private System.Windows.Forms.Button buttonOpen;
     }
 }
 

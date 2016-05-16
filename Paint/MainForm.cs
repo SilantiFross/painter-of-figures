@@ -1,4 +1,5 @@
-﻿using System.IO;
+﻿using System;
+using System.IO;
 using System.Windows.Forms;
 using System.Xml.Serialization;
 using Paint.Classes;
@@ -78,6 +79,19 @@ namespace Paint
             using (var fileStream = new FileStream("storage.xml", FileMode.Create))
             {
                 formatter.Serialize(fileStream, storeFigures);
+            }
+        }
+
+        private void buttonOpen_Click(object sender, EventArgs e)
+        {
+            var formatter = new XmlSerializer(typeof(StoreFigures));
+
+            using (var fileStream = new FileStream("storage.xml", FileMode.Open))
+            {
+                storeFigures = (StoreFigures)formatter.Deserialize(fileStream);
+
+                foreach (dynamic shapeInList in storeFigures.ShapesList)
+                    drawingShapes.Draw(shapeInList);
             }
         }
     }
