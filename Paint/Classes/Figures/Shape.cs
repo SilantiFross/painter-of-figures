@@ -10,14 +10,15 @@ namespace Paint.Classes.Figures
         [XmlIgnore]
         public Color Color { get; set; }
 
-        [XmlElement("XMLColor")]
+        public Shape()
+        { }
+
+        [XmlElement("ColorArgb")]
         public int BackColorAsArgb
         {
             get { return Color.ToArgb(); }
             set { Color = Color.FromArgb(value); }
         }
 
-        public Shape()
-        { }
     }
 }

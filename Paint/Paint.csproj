@@ -56,6 +56,7 @@
     <Compile Include="Classes\Figures\Shape.cs" />
     <Compile Include="Classes\MouseController.cs" />
     <Compile Include="Classes\StoreFigures.cs" />
+    <Compile Include="Classes\XmlSerialize.cs" />
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>

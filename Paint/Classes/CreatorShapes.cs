@@ -12,7 +12,7 @@ namespace Paint.Classes
 
         public Point CreatePoint(Point pointA, Color color)
         {
-            var point = new Point(pointA.x, pointA.y) {Color = color};
+            var point = new Point(pointA.X, pointA.Y) {Color = color};
 
             return point;
         }
@@ -26,14 +26,14 @@ namespace Paint.Classes
 
         public Rectangle CreateRectangle(Point pointA, Point pointB, Color color)
         {
-            var rectangle = new Rectangle(pointA, pointB.x - pointA.x, pointB.y - pointA.y, color);
+            var rectangle = new Rectangle(pointA, pointB.X - pointA.X, pointB.Y - pointA.Y, color);
 
             return rectangle;
         }
 
         public Ellipse CreateEllipse(Point pointA, Point pointB, Color color)
         {
-            var ellipse = new Ellipse(pointA, pointB.x - pointA.x, pointB.y - pointA.y, color);
+            var ellipse = new Ellipse(pointA, pointB.X - pointA.X, pointB.Y - pointA.Y, color);
 
             return ellipse;
         }
@@ -48,9 +48,9 @@ namespace Paint.Classes
 
         private List<Point> CreatePointsForTriangle(Point pointA, Point pointB)
         {
-            var pointOne = new Point((pointA.x + pointB.x) / 2, pointA.y);
-            var pointTwo = new Point(pointA.x, pointB.y);
-            var pointThree = new Point(pointB.x, pointB.y);
+            var pointOne = new Point((pointA.X + pointB.X) / 2, pointA.Y);
+            var pointTwo = new Point(pointA.X, pointB.Y);
+            var pointThree = new Point(pointB.X, pointB.Y);
 
             return new List<Point>()
             {

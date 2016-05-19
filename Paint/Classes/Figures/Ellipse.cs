@@ -1,17 +1,20 @@
 ﻿using System;
 using System.Drawing;
+using System.Xml.Serialization;
 
 namespace Paint.Classes.Figures
 {
     [Serializable]
     public class Ellipse: Shape
     {
-        public  Point _topLeft;
-        public  float _width;
-        public  float _height;
+        private Point _topLeft;
+        private float _width;
+        private float _height;
 
         public Ellipse()
-        { }
+        {
+            _topLeft = new Point();
+        }
 
         public Ellipse(Point topLeft, float width, float height, Color color)
         {
@@ -21,12 +24,32 @@ namespace Paint.Classes.Figures
             this.Color = color;
         }
 
-        public float GetTopLeftX => _topLeft.x;
+        [XmlElement("x")]
+        public float GetTopLeftX
+        {
+            get { return _topLeft.X; }
+            set { _topLeft.X = value; }
+        }
 
-        public float GetTopLeftY => _topLeft.y;
+        [XmlElement("y")]
+        public float GetTopLeftY
+        {
+            get { return _topLeft.Y; }
+            set { _topLeft.Y = value; }
+        }
 
-        public float GetWidth => _width;
+        [XmlElement("_width")]
+        public float GetWidth
+        {
+            get { return _width; }
+            set { _width = value; }
+        }
 
-        public float GetHeight => _height;
+        [XmlElement("_height")]
+        public float GetHeight
+        {
+            get { return _height; }
+            set { _height = value; }
+        }
     }
 }

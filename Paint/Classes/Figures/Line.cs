@@ -1,13 +1,14 @@
 ﻿using System;
 using System.Drawing;
+using System.Xml.Serialization;
 
 namespace Paint.Classes.Figures
 {
     [Serializable]
     public class Line: Shape
     {
-        public Point _pointA;
-        public Point _pointB;
+        private Point _pointA;
+        private Point _pointB;
 
         public Line()
         { }
@@ -19,8 +20,18 @@ namespace Paint.Classes.Figures
             this.Color = color;
         }
 
-        public Point GetPointA => _pointA;
+        [XmlElement("_pointA")]
+        public Point GetPointA
+        {
+            get { return _pointA; }
+            set { _pointA = value; }
+        }
 
-        public Point GetPointB => _pointB;
+        [XmlElement("_pointB")]
+        public Point GetPointB
+        {
+            get { return _pointB; }
+            set { _pointB = value; }  
+        } 
     }
 }

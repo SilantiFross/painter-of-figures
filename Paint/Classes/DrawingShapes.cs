@@ -30,8 +30,8 @@ namespace Paint.Classes
         {
             var penColor = new Pen(point.Color);
 
-            FormGraphics.DrawLine(penColor, point.x, point.y,
-                point.x + 1, point.y);
+            FormGraphics.DrawLine(penColor, point.X, point.Y,
+                point.X + 1, point.Y);
         }
 
         public void Draw(Rectangle rectangle)

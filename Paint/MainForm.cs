@@ -1,7 +1,5 @@
 ﻿using System;
-using System.IO;
 using System.Windows.Forms;
-using System.Xml.Serialization;
 using Paint.Classes;
 
 namespace Paint
@@ -11,7 +9,7 @@ namespace Paint
         private MouseController mouseController = new MouseController();
         private CreatorShapes creatorShapes = new CreatorShapes();
         private DrawingShapes drawingShapes = new DrawingShapes();
-        private StoreFigures storeFigures = new StoreFigures();
+        private StoreFigures _storeFigures = new StoreFigures();
 
         public MainForm()
         {
@@ -28,71 +26,65 @@ namespace Paint
             mouseController.GetPointMouseUp(e);
         }
 
-        private void panelColor_Click(object sender, System.EventArgs e)
+        private void panelColor_Click(object sender, EventArgs e)
         {
             creatorShapes.SetColorShape(panelColor);
         }
 
-        private void buttonPoint_Click(object sender, System.EventArgs e)
+        private void buttonPoint_Click(object sender, EventArgs e)
         {
             var point = creatorShapes.CreatePoint(MouseController.PointMouseDown, panelColor.BackColor);
             drawingShapes.Draw(point);
-            storeFigures.ShapesList.Add(point);
+            _storeFigures.ShapesList.Add(point);
         }
 
-        private void buttonLine_Click(object sender, System.EventArgs e)
+        private void buttonLine_Click(object sender, EventArgs e)
         {
             var line = creatorShapes.CreateLine(MouseController.PointMouseDown, MouseController.PointMouseUp,
                 panelColor.BackColor);
             drawingShapes.Draw(line);
-            storeFigures.ShapesList.Add(line);
+            _storeFigures.ShapesList.Add(line);
         }
 
-        private void buttonRectangle_Click(object sender, System.EventArgs e)
+        private void buttonRectangle_Click(object sender, EventArgs e)
         {
             var rectangle = creatorShapes.CreateRectangle(MouseController.PointMouseDown, MouseController.PointMouseUp,
                 panelColor.BackColor);
             drawingShapes.Draw(rectangle);
-            storeFigures.ShapesList.Add(rectangle);
+            _storeFigures.ShapesList.Add(rectangle);
         }
 
-        private void buttonEllipse_Click(object sender, System.EventArgs e)
+        private void buttonEllipse_Click(object sender, EventArgs e)
         {
             var ellipse = creatorShapes.CreateEllipse(MouseController.PointMouseDown, MouseController.PointMouseUp,
                 panelColor.BackColor);
             drawingShapes.Draw(ellipse);
-            storeFigures.ShapesList.Add(ellipse);
+            _storeFigures.ShapesList.Add(ellipse);
         }
 
-        private void buttonTriangle_Click(object sender, System.EventArgs e)
+        private void buttonTriangle_Click(object sender, EventArgs e)
         {
             var triangle = creatorShapes.CreateTriangle(MouseController.PointMouseDown, MouseController.PointMouseUp,
                 panelColor.BackColor);
             drawingShapes.Draw(triangle);
-            storeFigures.ShapesList.Add(triangle);
+            _storeFigures.ShapesList.Add(triangle);
         }
 
         private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
         {
-            var formatter = new XmlSerializer(typeof(StoreFigures));
+            var xmlSerialize = new XmlSerialize();
 
-            using (var fileStream = new FileStream("storage.xml", FileMode.Create))
-            {
-                formatter.Serialize(fileStream, storeFigures);
-            }
+            xmlSerialize.SerializeStore(_storeFigures);
         }
 
         private void buttonOpen_Click(object sender, EventArgs e)
         {
-            var formatter = new XmlSerializer(typeof(StoreFigures));
+            var xmlDeserialize = new XmlSerialize();
 
-            using (var fileStream = new FileStream("storage.xml", FileMode.Open))
-            {
-                storeFigures = (StoreFigures)formatter.Deserialize(fileStream);
-
-                foreach (dynamic shapeInList in storeFigures.ShapesList)
-                    drawingShapes.Draw(shapeInList);
-            }
+            _storeFigures = xmlDeserialize.DeserializeStore();
+                
+            foreach (dynamic shapeInList in _storeFigures.ShapesList)
+                drawingShapes.Draw(shapeInList);
         }
     }
 }

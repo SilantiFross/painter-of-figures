@@ -1,14 +1,15 @@
 ﻿using System;
 using System.Drawing;
+using System.Xml.Serialization;
 
 namespace Paint.Classes.Figures
 {
     [Serializable]
     public class Triangle: Shape
     {
-        public Point _pointA;
-        public Point _pointB;
-        public Point _pointC;
+        private Point _pointA;
+        private Point _pointB;
+        private Point _pointC;
 
         public Triangle()
         { }
@@ -21,10 +22,25 @@ namespace Paint.Classes.Figures
             this.Color = color;
         }
 
-        public Point GetPointA => _pointA;
+        [XmlElement("_pointA")]
+        public Point GetPointA
+        {
+            get { return _pointA; }
+            set { _pointA = value; }
+        }
 
-        public Point GetPointB => _pointB;
+        [XmlElement("_pointB")]
+        public Point GetPointB
+        {
+            get { return _pointB; }
+            set { _pointB = value; }
+        }
 
-        public Point GetPointC => _pointC;
+        [XmlElement("_pointC")]
+        public Point GetPointC
+        {
+            get { return _pointC; }
+            set { _pointC = value; }
+        }
     }
 }
