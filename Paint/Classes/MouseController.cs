@@ -1,5 +1,5 @@
 ﻿using System.Windows.Forms;
-using PointDLL;
+using Point = Paint.Classes.Figures.Point;
 
 namespace Paint.Classes
 {
