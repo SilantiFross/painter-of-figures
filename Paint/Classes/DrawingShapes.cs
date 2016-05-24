@@ -1,8 +1,10 @@
 ﻿using System.Drawing;
 using System.Windows.Forms;
-using Paint.Classes.Figures;
-using Point = Paint.Classes.Figures.Point;
-using Rectangle = Paint.Classes.Figures.Rectangle;
+using EllipseDLL;
+using LineDLL;
+using TriangleDLL;
+using Point = PointDLL.Point;
+using Rectangle = RectangleDLL;
 
 namespace Paint.Classes
 {
@@ -34,7 +36,7 @@ namespace Paint.Classes
                 point.X + 1, point.Y);
         }
 
-        public void Draw(Rectangle rectangle)
+        public void Draw(Rectangle.Rectangle rectangle)
         {
             var penColor = new Pen(rectangle.Color);
 
