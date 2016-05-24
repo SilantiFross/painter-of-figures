@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Windows.Forms;
+using CreatorShapesDLL;
 using Paint.Classes;
 
 namespace Paint
@@ -16,6 +17,17 @@ namespace Paint
             InitializeComponent();
         }
 
+        //Create new class
+        public void SetColorShape(Panel panelColor)
+        {
+            var colorDialog = new ColorDialog();
+
+            if (colorDialog.ShowDialog() == DialogResult.OK)
+            {
+                panelColor.BackColor = colorDialog.Color;
+            }
+        }
+
         private void MainForm_MouseDown(object sender, MouseEventArgs e)
         {
             mouseController.GetPointMouseDown(e);
@@ -28,7 +40,7 @@ namespace Paint
 
         private void panelColor_Click(object sender, EventArgs e)
         {
-            creatorShapes.SetColorShape(panelColor);
+            SetColorShape(panelColor);
         }
 
         private void buttonPoint_Click(object sender, EventArgs e)
@@ -85,6 +97,11 @@ namespace Paint
                 
             foreach (dynamic shapeInList in _storeFigures.ShapesList)
                 drawingShapes.Draw(shapeInList);
+        }
+
+        private void MainForm_Load(object sender, EventArgs e)
+        {
+            //Plug
         }
     }
 }

@@ -1,7 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
-using Paint.Classes.Figures;
+using EllipseDLL;
+using LineDLL;
+using PointDLL;
+using RectangleDLL;
+using ShapeDLL;
+using TriangleDLL;
 
 namespace Paint.Classes
 {
