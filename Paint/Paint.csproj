@@ -46,6 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Classes\ControllerColors.cs" />
     <Compile Include="Classes\CreatorShapes.cs" />
     <Compile Include="Classes\DrawingShapes.cs" />
     <Compile Include="Classes\Figures\Ellipse.cs" />

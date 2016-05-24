@@ -1,6 +1,5 @@
 ﻿using System.Collections.Generic;
 using System.Drawing;
-using System.Windows.Forms;
 using Paint.Classes.Figures;
 using Point = Paint.Classes.Figures.Point;
 using Rectangle = Paint.Classes.Figures.Rectangle;
@@ -56,16 +55,6 @@ namespace Paint.Classes
             {
                 pointOne, pointTwo, pointThree
             };
-        }
-
-        public void SetColorShape(Panel panelColor)
-        {
-            var colorDialog = new ColorDialog();
-
-            if (colorDialog.ShowDialog() == DialogResult.OK)
-            {
-                panelColor.BackColor = colorDialog.Color;
-            }
         }
 
     }

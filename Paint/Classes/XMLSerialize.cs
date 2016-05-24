@@ -26,7 +26,6 @@ namespace Paint.Classes
             {
                 return (StoreFigures) formatter.Deserialize(fileStream);
             }
-
         }
     }
 }

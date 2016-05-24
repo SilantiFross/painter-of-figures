@@ -7,6 +7,7 @@ namespace Paint
     public partial class MainForm : Form
     {
         private MouseController mouseController = new MouseController();
+        private ControllerColors controllerColors = new ControllerColors();
         private CreatorShapes creatorShapes = new CreatorShapes();
         private DrawingShapes drawingShapes = new DrawingShapes();
         private StoreFigures _storeFigures = new StoreFigures();
@@ -28,7 +29,7 @@ namespace Paint
 
         private void panelColor_Click(object sender, EventArgs e)
         {
-            creatorShapes.SetColorShape(panelColor);
+            controllerColors.SetColorShape(panelColor);
         }
 
         private void buttonPoint_Click(object sender, EventArgs e)
@@ -85,6 +86,11 @@ namespace Paint
                 
             foreach (dynamic shapeInList in _storeFigures.ShapesList)
                 drawingShapes.Draw(shapeInList);
+        }
+
+        private void MainForm_Load(object sender, EventArgs e)
+        {
+            
         }
     }
 }
