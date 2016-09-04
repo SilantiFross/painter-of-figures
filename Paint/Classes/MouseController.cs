@@ -5,17 +5,25 @@ namespace Paint.Classes
 {
     public class MouseController
     {
-        public static Point PointMouseDown;
-        public static Point PointMouseUp;
+        public Point PointMouseDown;
+        public Point PointMouseUp;
+
+        public MouseController()
+        {
+            this.PointMouseDown = new Point(0, 0);
+            this.PointMouseUp = new Point(0, 0);
+        }
 
         public void GetPointMouseDown(MouseEventArgs e)
         {
-            PointMouseDown = new Point(e.X, e.Y);
+            PointMouseDown.X = e.X;
+            PointMouseDown.Y = e.Y;
         }
 
         public void GetPointMouseUp(MouseEventArgs e)
         {
-            PointMouseUp = new Point(e.X, e.Y);
+            PointMouseUp.X = e.X;
+            PointMouseUp.Y = e.Y;
         }
     }
 }

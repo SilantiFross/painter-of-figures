@@ -6,7 +6,7 @@ using Rectangle = Paint.Classes.Figures.Rectangle;
 
 namespace Paint.Classes
 {
-    internal class DrawingShapes
+    public class DrawingShapes
     {
         private static readonly Form FormForDrawing = Form.ActiveForm;
         private static readonly Graphics FormGraphics = FormForDrawing.CreateGraphics();

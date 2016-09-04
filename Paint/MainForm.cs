@@ -8,9 +8,7 @@ namespace Paint
     {
         private MouseController mouseController = new MouseController();
         private ControllerColors controllerColors = new ControllerColors();
-        private CreatorShapes creatorShapes = new CreatorShapes();
-        private DrawingShapes drawingShapes = new DrawingShapes();
-        private StoreFigures _storeFigures = new StoreFigures();
+        private ShapesComposite shapesComposite = new ShapesComposite();
 
         public MainForm()
         {
@@ -34,58 +32,58 @@ namespace Paint
 
         private void buttonPoint_Click(object sender, EventArgs e)
         {
-            var point = creatorShapes.CreatePoint(MouseController.PointMouseDown, panelColor.BackColor);
-            drawingShapes.Draw(point);
-            _storeFigures.ShapesList.Add(point);
+            var point = shapesComposite.creatorShapes.CreatePoint(mouseController.PointMouseDown, panelColor.BackColor);
+            shapesComposite.drawingShapes.Draw(point);
+            shapesComposite._storeFigures.ShapesList.Add(point);
         }
 
         private void buttonLine_Click(object sender, EventArgs e)
         {
-            var line = creatorShapes.CreateLine(MouseController.PointMouseDown, MouseController.PointMouseUp,
+            var line = shapesComposite.creatorShapes.CreateLine(mouseController.PointMouseDown, mouseController.PointMouseUp,
                 panelColor.BackColor);
-            drawingShapes.Draw(line);
-            _storeFigures.ShapesList.Add(line);
+            shapesComposite.drawingShapes.Draw(line);
+            shapesComposite._storeFigures.ShapesList.Add(line);
         }
 
         private void buttonRectangle_Click(object sender, EventArgs e)
         {
-            var rectangle = creatorShapes.CreateRectangle(MouseController.PointMouseDown, MouseController.PointMouseUp,
+            var rectangle = shapesComposite.creatorShapes.CreateRectangle(mouseController.PointMouseDown, mouseController.PointMouseUp,
                 panelColor.BackColor);
-            drawingShapes.Draw(rectangle);
-            _storeFigures.ShapesList.Add(rectangle);
+            shapesComposite.drawingShapes.Draw(rectangle);
+            shapesComposite._storeFigures.ShapesList.Add(rectangle);
         }
 
         private void buttonEllipse_Click(object sender, EventArgs e)
         {
-            var ellipse = creatorShapes.CreateEllipse(MouseController.PointMouseDown, MouseController.PointMouseUp,
+            var ellipse = shapesComposite.creatorShapes.CreateEllipse(mouseController.PointMouseDown, mouseController.PointMouseUp,
                 panelColor.BackColor);
-            drawingShapes.Draw(ellipse);
-            _storeFigures.ShapesList.Add(ellipse);
+            shapesComposite.drawingShapes.Draw(ellipse);
+            shapesComposite._storeFigures.ShapesList.Add(ellipse);
         }
 
         private void buttonTriangle_Click(object sender, EventArgs e)
         {
-            var triangle = creatorShapes.CreateTriangle(MouseController.PointMouseDown, MouseController.PointMouseUp,
+            var triangle = shapesComposite.creatorShapes.CreateTriangle(mouseController.PointMouseDown, mouseController.PointMouseUp,
                 panelColor.BackColor);
-            drawingShapes.Draw(triangle);
-            _storeFigures.ShapesList.Add(triangle);
+            shapesComposite.drawingShapes.Draw(triangle);
+            shapesComposite._storeFigures.ShapesList.Add(triangle);
         }
 
         private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
         {
             var xmlSerialize = new XmlSerialize();
 
-            xmlSerialize.SerializeStore(_storeFigures);
+            xmlSerialize.SerializeStore(shapesComposite._storeFigures);
         }
 
         private void buttonOpen_Click(object sender, EventArgs e)
         {
             var xmlDeserialize = new XmlSerialize();
 
-            _storeFigures = xmlDeserialize.DeserializeStore();
+            shapesComposite._storeFigures = xmlDeserialize.DeserializeStore();
                 
-            foreach (dynamic shapeInList in _storeFigures.ShapesList)
-                drawingShapes.Draw(shapeInList);
+            foreach (dynamic shapeInList in shapesComposite._storeFigures.ShapesList)
+                shapesComposite.drawingShapes.Draw(shapeInList);
         }
 
         private void MainForm_Load(object sender, EventArgs e)
